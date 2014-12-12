@@ -1,0 +1,46 @@
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `modified_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+use sandbox;
+/*insert into wt_events(id_user, event_dt, weight) SELECT 1,'2013-12-02','250.04';
+*/
+
+CREATE TABLE `wt_events` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) DEFAULT NULL,
+  `event_dt` datetime DEFAULT NULL,
+  `weight` float(5,2) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `modified_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+INSERT INTO `sandbox`.`users`
+(`id`,
+`name`,
+`created_at`,
+`modified_at`)
+VALUES
+(<{id: }>,
+<{name: }>,
+<{created_at: }>,
+<{modified_at: }>);
+
+INSERT INTO `sandbox`.`wt_events`
+(
+`id_user`,
+`event_dt`,
+`weight`,
+)
+VALUES
+(
+<{id_user:1 }>,
+<{event_dt: }>,
+<{weight: }>);
+
